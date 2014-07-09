@@ -1,0 +1,23 @@
+.tp-term-image {
+
+	img {
+		display: block;
+		margin: 0 0 10px 0;
+	}
+
+	input {
+		
+		&#tp-term-image {
+			margin-right: 5px;
+			width: 240px;
+		}
+
+		&.button-secondary {
+			display: inline;
+			margin-left: 5px;
+			width: auto;
+		}
+
+	}
+
+}
