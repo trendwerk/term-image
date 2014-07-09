@@ -5,10 +5,6 @@ Support for term images. Made for WordPress.
 
 ## Usage
 
-### Step 1
-Copy these files to assets/plugins/
-
-### Step 2
 Add support for images to any taxonomy. For example:
 	
 	$args = array(
