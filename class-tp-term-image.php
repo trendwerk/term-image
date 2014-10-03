@@ -8,8 +8,16 @@ class TP_Term_Image {
 	var $taxonomies;
 
 	function __construct() {
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'plugins_loaded', array( $this, 'localization' ) );
+		add_action( 'init', array( $this, 'init' ), 11 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+	}
+
+	/**
+	 * Load localization
+	 */
+	function localization() {
+		load_muplugin_textdomain( 'term-image', dirname( plugin_basename( __FILE__ ) ) . '/assets/lang/' );
 	}
 	
 	/**
@@ -48,7 +56,7 @@ class TP_Term_Image {
 		?>
 		<tr class="form-field tp-term-image">
 			<th scope="row" valign="top">
-				<label for="tp-term-image"><?php _e( 'Image', 'tp' ); ?></label>
+				<label for="tp-term-image"><?php _e( 'Image', 'term-image' ); ?></label>
 			</th>
 
 			<td>
@@ -61,9 +69,9 @@ class TP_Term_Image {
 				<input type="file" name="tp-term-image" id="tp-term-image" />
 				<?php 
 					if( $has_image ) { 
-						_e( 'or', 'tp' ); 
+						_e( 'or', 'term-image' ); 
 						?> 
-						<input type="submit" class="button-secondary" name="tp-remove-term-image" value="<?php _e( 'Remove', 'tp' ); ?>" />
+						<input type="submit" class="button-secondary" name="tp-remove-term-image" value="<?php _e( 'Remove', 'term-image' ); ?>" />
 						<?php 
 					} 
 				?>
@@ -101,7 +109,7 @@ class TP_Term_Image {
 	 * Enqueue scripts
 	 */
 	function enqueue_scripts() {
-		wp_enqueue_style( 'tp-term-image', get_stylesheet_directory_uri() . '/assets/plugins/term-image/sass/admin.css' );
+		wp_enqueue_style( 'tp-term-image', plugins_url( 'assets/sass/admin.css', __FILE__ ) );
 
 	}
 
