@@ -3,7 +3,7 @@
  * Plugin Name: Term image
  * Description: Support for term images.
  *
- * Plugin URI: https://github.com/trendwerk/breadcrumbs
+ * Plugin URI: https://github.com/trendwerk/term-image
  * 
  * Author: Trendwerk
  * Author URI: https://github.com/trendwerk
