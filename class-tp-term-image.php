@@ -2,6 +2,13 @@
 /**
  * Plugin Name: Term image
  * Description: Support for term images.
+ *
+ * Plugin URI: https://github.com/trendwerk/breadcrumbs
+ * 
+ * Author: Trendwerk
+ * Author URI: https://github.com/trendwerk
+ * 
+ * Version: 1.0.0
  */
 
 class TP_Term_Image {
